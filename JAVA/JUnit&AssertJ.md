@@ -53,10 +53,12 @@ assertArrayEquals(winners.toArray(), new String[]{"애쉬", "스플릿"});
 assertTrue(winners.containsAll(List.of("애쉬", "스플릿")));
 ```
 
-B.	ASSERTJ는 다양한 메서드를 제공해줌으로써, 추가 구현을 덜어준다. 또한 통일성도 있고, 문장처럼 읽혀서 가독성도 좋다.
+B.	ASSERTJ는 다양한 메서드를 제공해줌으로써, 추가 구현을 덜어준다. 또한 통일성도 있고, 문장처럼 읽혀서 가독성도 좋다.\
+```java
 assertThat(winners).containsExactlyInAnyOrder("애쉬", "스플릿");
 assertThat(winners).containsExactly("애쉬", "스플릿");
-assertThat(winners).contains("애쉬", "스플릿"); 
+assertThat(winners).contains("애쉬", "스플릿");
+```
 #### 4)	메서드 체이닝으로 다중 테스트를 한 번에 
 A.	문자열의 검증
 ```java
