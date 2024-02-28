@@ -53,7 +53,7 @@ assertArrayEquals(winners.toArray(), new String[]{"애쉬", "스플릿"});
 assertTrue(winners.containsAll(List.of("애쉬", "스플릿")));
 ```
 
-B.	AssertJ는 다양한 메서드를 제공해줌으로써, 추가 구현을 덜어준다. 또한 통일성도 있고, 문장처럼 읽혀서 가독성도 좋다.\
+B.	AssertJ는 다양한 메서드를 제공해줌으로써, 추가 구현을 덜어준다. 또한 통일성도 있고, 문장처럼 읽혀서 가독성도 좋다.  
 ```java
 // AssertJ
 assertThat(winners).containsExactlyInAnyOrder("애쉬", "스플릿");
