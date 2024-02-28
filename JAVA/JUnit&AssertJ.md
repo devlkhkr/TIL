@@ -1,15 +1,15 @@
 ### &#128204; 사용 이유
 홈플러스 임대 매장 관리 시스템 재구축 프로젝트 내 애자일 방법론의 채용으로 TDD 모델 설계 및 백엔드 Class 단위 테스트.
 ### &#128204; 사용 라이브러리
-JUNIT + ASSERTJ
+JUnit + AssertJ
 ### &#128204; 테스트와 프로덕션 코드 분리
 프로덕션 소프트웨어를 배포할 때 테스트를 함께 포함할 수 있지만 보통 그렇게 하지 않는 이유는, 로딩하는 JAR 파일이 커지고 코드 베이스의 공격 표면(Attack surface)도 늘어나기 때문이다.
 이를 위한 테스트 패키지 아키텍처 테스트를 별도 디렉터리로 분리하지만 프로덕션 코드와 같은 패키지에 넣는다. 이클립스와 메이븐 같은 도구는 이 모델을 권장한다.  
 src 디렉토리와 별개로 클래스 패스에 test 디렉토리를 두고, 실제 테스트할 클래스의 패키지명을 동일하게 만들어 테스트 클래스를 작성한다.  
 이렇게 디렉토리와 패키지를 구성하면 각 테스트는 검증하고자 하는 대상 클래스와 동일한 패키지를 갖는다.  
 즉, 테스트 클래스는 패키지 수준의 접근 권한을 가진다.
-### &#128204; ASSERTJ 사용으로 JUNIT의 부족한 Assertions 메서드를 보완
-Junit과 AssertJ를 함께 사용하면 개발 속도와 코드의 양, 가독성 등을 보완할 수 있다.  
+### &#128204; AssertJ 사용으로 JUnit의 부족한 Assertions 메서드를 보완
+JUnit과 AssertJ를 함께 사용하면 개발 속도와 코드의 양, 가독성 등을 보완할 수 있다.  
 이를 순서대로 소개하자면,
 
 #### 1) 가독성  
@@ -18,10 +18,10 @@ Junit과 AssertJ를 함께 사용하면 개발 속도와 코드의 양, 가독�
 A.	assertEquals(a,b);  
 B.	assertThat(a).isEqualTo(b) 
   
-A가 JUNIT에서 제공하는 메서드이고, B가 ASSERTJ에서 제공하는 메서드이다.  
+A가 JUnit에서 제공하는 메서드이고, B가 AssertJ에서 제공하는 메서드이다.  
 A의 코드는 어느 것이 실제 값이고, 어느 것이 예상 값인지 쉽게 유추할 수 없다.  
 B의 코드는 메서드의 직관적인 네이밍으로 왼쪽에서 오른쪽으로 자연스럽게 읽힌다.  
-이와 같이 ASSERTJ는 가독성이 좋지않은 JUNIT의 메서드를 읽기 좋게 풀어내었다.  
+이와 같이 AssertJ는 가독성이 좋지않은 JUnit의 메서드를 읽기 좋게 풀어내었다.  
   
 ####	2) 자세한 실패 메시지로 실패 원인 파악 용이  
 A.	assertTrue(name.contains(“o”));
@@ -33,7 +33,7 @@ Actual   :false
 ```
 이 실패 메시지를 통해서는 예상값이 true이지만 실제 값은 false라는 사실만 알 수 있고,  
 무슨 테스트를 실패했는지 (“o”를 포함하지 않아서 실패) 했다는 사실은 알 수 없다.  
-B.	이를 ASSERTJ를 활용해 바꿔보자.  
+B.	이를 AssertJ를 활용해 바꿔보자.  
 assertThat(a).contains(“o”);
 위 테스트를 돌렸을 때 실패 메시지는 다음과 같다.  
 ```java
@@ -45,7 +45,7 @@ to contain:
 ```
 실패 메시지만 보고도 어느 것을 테스트하려 했는데 실패한건지, 실패의 원인이 무엇인지 파악할 수 있다.  
 #### 3)	간결하고 다양한 검증 메서드 제공으로 인한 편리함
-A.	JUNIT은 간단한 메서드들밖에 제공해주지 않아서, 비교를 위해 추가로 많은 JAVA 코드작업들이 필요하다.
+A.	JUnit은 간단한 메서드들밖에 제공해주지 않아서, 비교를 위해 추가로 많은 JAVA 코드작업들이 필요하다.
 ```java
 // JUnit
 assertTrue(winners.containsAll(List.of("애쉬", "스플릿")) && winners.size() == 2);
@@ -53,8 +53,9 @@ assertArrayEquals(winners.toArray(), new String[]{"애쉬", "스플릿"});
 assertTrue(winners.containsAll(List.of("애쉬", "스플릿")));
 ```
 
-B.	ASSERTJ는 다양한 메서드를 제공해줌으로써, 추가 구현을 덜어준다. 또한 통일성도 있고, 문장처럼 읽혀서 가독성도 좋다.\
+B.	AssertJ는 다양한 메서드를 제공해줌으로써, 추가 구현을 덜어준다. 또한 통일성도 있고, 문장처럼 읽혀서 가독성도 좋다.\
 ```java
+// AssertJ
 assertThat(winners).containsExactlyInAnyOrder("애쉬", "스플릿");
 assertThat(winners).containsExactly("애쉬", "스플릿");
 assertThat(winners).contains("애쉬", "스플릿");
