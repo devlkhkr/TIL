@@ -69,10 +69,12 @@ assertThat("[TITLE] Hello, My Name is ash")
 .doesNotStartWith("[ERROR]");
 ```
 B.	숫자의 검증
+```java
 assertThat(score)
 .isPositive()
 .isGreaterThan(60)
 .isLessThanOrEqualTo(75);
+```
 위와 같이, 메서드 체이닝을 통해 여러가지 테스트를 한 번에 할 수 있다.
 위 테스트들을 JUnit이 기본 제공하는 메서드를 사용하여 테스트한다면 해당 코드는 가독성이 떨어지고 코드의 길이도 길어지게 될 것이다.
 ### &#128204; 간단한 테스팅 예제
