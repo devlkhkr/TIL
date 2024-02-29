@@ -115,16 +115,16 @@ findWinners 메서드는 랜덤한 두명의 우승자를 구하는 함수라고
 그렇다면 위 테스트는 랜덤한 우승자가 “성훈“, “지우” 와 모두 일치하면 성공, 한명이라도 다르다면 실패를 반환 할 것이다.  
 예를들어 우승자 예측을 한명만 성공한 경우가 있다면 아래와 같은 에러를 마주 할 것이다.
 
-```java
+```junit
 java.lang.AssertionError:
 Expecting actual:
-["지우", "형래"]
+  ["지우", "형래"]
 to contain exactly in any order:
-["성훈", "지우"]
+  ["성훈", "지우"]
 elements not found:
-["성훈"]
+  ["성훈"]
 and elements not expected:
-["형래"]
+  ["형래"]
 ```
 
 위의 메시지를 해석해보면 아래 네가지 사실을 알 수 있다.
