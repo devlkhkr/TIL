@@ -107,17 +107,17 @@ and elements not expected:
 이렇게 AssertJ를 사용하면 자세한 실패 메시지를 통해, 실패 원인을 보다 정확하게 파악할 수 있다.
 
 ### &#128204; 테스트환경 구성방법 (IntelliJ 기준)
-1. 테스트 폴더를 생성한다.  
+#### 1) 테스트 폴더를 생성한다.  
 상위 폴더에서 New > Directory를 클릭하여 src 하위에 main과 같은 레벨로 test 폴더를 생성한다. (Spring Initializr 사용시 자동 생성)  
-2. main을 소스폴더로, test 폴더를 테스트 폴더로 지정한다.  
+#### 2) main을 소스폴더로, test 폴더를 테스트 폴더로 지정한다.  
 최상위 프로젝트 폴더 우클릭 > 모듈 설정 열기 > 모듈 > test > 소스  
 <다음으로 표시> 우측 버튼들 중 main/java는 소스로, test/java는 테스트로 선택한다.  
 테스트 폴더가 지정되면 소스 폴더는 파란색, 테스트 폴더는 초록색으로 변경된 것을 확인할 수 있다.  
-3. main과 test의 패키지 구조를 동일하게 구성하고, test에서는 테스트 할 클래스명 뒤에 Test suffix를 붙인다. (예:CmsnService, CmsnServiceTest)  
+#### 3) main과 test의 패키지 구조를 동일하게 구성하고, test에서는 테스트 할 클래스명 뒤에 Test suffix를 붙인다. (예:CmsnService, CmsnServiceTest)  
   
 <img width="312" src="https://github.com/devlkhkr/TIL/assets/84236655/75f15a4f-ba66-4a8b-b1aa-d7fc09f9040d">
   
-4. 테스트 코드를 작성한다.
+#### 4) 테스트 코드를 작성한다.
 ```java
 // main/.../cmsn/service/CmsnService.java
 @Service
@@ -145,20 +145,20 @@ public class CmsnServiceTest {
 
 }
 ```
-5. 단위테스트별 프로그램을 구성한다.
+#### 5) 단위테스트별 프로그램을 구성한다.  
   5-1. 실행/디버그 구성 선택 클릭 > 구성 편집으로 진입한다.  
   5-2. +버튼을 눌러 Junit을 추가한다.  
   5-3. 테스트 단위 이름과, 클래스를 설정한다.
   
-<img width="312" alt="스크린샷 2024-02-29 오전 10 47 48" src="https://github.com/devlkhkr/TIL/assets/84236655/1d26b386-d2e0-4bbc-a64f-64b1d270c73d">
+  <img width="312" alt="스크린샷 2024-02-29 오전 10 47 48" src="https://github.com/devlkhkr/TIL/assets/84236655/1d26b386-d2e0-4bbc-a64f-64b1d270c73d">
   
-6. 테스트 진행
+#### 6) 테스트 진행
    실행 구성 목록에서 테스팅 할 단위테스트를 선택 후 RUN 버튼을 눌러 테스트를 시작한다.  
    위의 코드는 정상적으로 테스트를 성공한다.  
      
-   <img width="528" alt="스크린샷 2024-02-29 오전 10 55 04" src="https://github.com/devlkhkr/TIL/assets/84236655/00b14be7-d262-4c5b-be35-b317d66d0245">
+<img width="528" alt="스크린샷 2024-02-29 오전 10 55 04" src="https://github.com/devlkhkr/TIL/assets/84236655/00b14be7-d262-4c5b-be35-b317d66d0245">
   
-8. 테스트 실패 케이스  
+#### 7) 테스트 실패 케이스  
    의도적인 테스트 실패 케이스를 작성을 위해 isLessThen의 파라미터를 5로 변경해보았다.
    ```java
    .isLessThen(5);
@@ -168,5 +168,7 @@ public class CmsnServiceTest {
    <img width="541" alt="스크린샷 2024-02-29 오전 10 56 40" src="https://github.com/devlkhkr/TIL/assets/84236655/8d1cf094-cea8-4eaf-bbc6-07459b02c18b">
   
      
-### &#128204; 마무리
-
+### &#128204; 마무리하며
+애자일 스프린트를 위해 TDD 모델을 구성해보았다.  
+보다 튼튼한 객체지향 코드생산이 가능할 것 같다는 느낌을 받았고,  
+개발 진행시 재설계 및 디버깅 시간의 단축으로 이어질 수 있을 것 같다.
