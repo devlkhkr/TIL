@@ -115,7 +115,7 @@ and elements not expected:
 테스트 폴더가 지정되면 소스 폴더는 파란색, 테스트 폴더는 초록색으로 변경된 것을 확인할 수 있다.  
 #### 3) main과 test의 패키지 구조를 동일하게 구성하고, test에서는 테스트 할 클래스명 뒤에 Test suffix를 붙인다. (예:CmsnService, CmsnServiceTest)  
   
-<img width="312" src="https://github.com/devlkhkr/TIL/assets/84236655/75f15a4f-ba66-4a8b-b1aa-d7fc09f9040d">
+<img width="300" src="https://github.com/devlkhkr/TIL/assets/84236655/75f15a4f-ba66-4a8b-b1aa-d7fc09f9040d">
   
 #### 4) 테스트 코드를 작성한다.
 ```java
@@ -150,13 +150,13 @@ public class CmsnServiceTest {
   5-2. +버튼을 눌러 Junit을 추가한다.  
   5-3. 테스트 단위 이름과, 클래스를 설정한다.
   
-  <img width="312" alt="스크린샷 2024-02-29 오전 10 47 48" src="https://github.com/devlkhkr/TIL/assets/84236655/1d26b386-d2e0-4bbc-a64f-64b1d270c73d">
+  <img width="300" alt="스크린샷 2024-02-29 오전 10 47 48" src="https://github.com/devlkhkr/TIL/assets/84236655/1d26b386-d2e0-4bbc-a64f-64b1d270c73d">
   
 #### 6) 테스트 진행
    실행 구성 목록에서 테스팅 할 단위테스트를 선택 후 RUN 버튼을 눌러 테스트를 시작한다.  
    위의 코드는 정상적으로 테스트를 성공한다.  
      
-<img width="528" alt="스크린샷 2024-02-29 오전 10 55 04" src="https://github.com/devlkhkr/TIL/assets/84236655/00b14be7-d262-4c5b-be35-b317d66d0245">
+<img width="300" alt="스크린샷 2024-02-29 오전 10 55 04" src="https://github.com/devlkhkr/TIL/assets/84236655/00b14be7-d262-4c5b-be35-b317d66d0245">
   
 #### 7) 테스트 실패 케이스  
    의도적인 테스트 실패 케이스를 작성을 위해 isLessThen의 파라미터를 5로 변경해보았다.
@@ -165,7 +165,7 @@ public class CmsnServiceTest {
    ```
    5보다 작은 수가 들어와야 하는데, 5가 들어왔으므로 테스트에 실패한다.
      
-   <img width="541" alt="스크린샷 2024-02-29 오전 10 56 40" src="https://github.com/devlkhkr/TIL/assets/84236655/8d1cf094-cea8-4eaf-bbc6-07459b02c18b">
+   <img width="300" alt="스크린샷 2024-02-29 오전 10 56 40" src="https://github.com/devlkhkr/TIL/assets/84236655/8d1cf094-cea8-4eaf-bbc6-07459b02c18b">
   
      
 ### &#128204; 마무리하며
