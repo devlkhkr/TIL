@@ -19,7 +19,7 @@ Last but not least, The browser connects to the server using TCP. It sends an HT
 
 Take a look at the picture below. It shows the steps we discussed in a simple way.
 
-![[963074bc-7e7d-45f2-a4c0-6c2dd05dc190.png]]
+![963074bc-7e7d-45f2-a4c0-6c2dd05dc190](https://github.com/devlkhkr/TIL/assets/84236655/d1c1d1c0-3425-43f6-9b28-21d5d29d3cee)
 
 In conclusion, it's important to understand that a lot happens behind the scenes when we search for "Google". and, we might guess why the response was slow sometimes.
 
