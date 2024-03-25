@@ -15,7 +15,7 @@ Lets type 'www.google.com' into your browser's search bar and hit Enter.
 Secondly, browser look at cached(stored) DNS records to control internet traffic and make data transfer faster. They first check the browser's own memory, then the computer's memory, then the router's memory, and finally, the memory of the internet service provider (ISP).
 If the IP for a URL isn't in the cache, the ISP keeps searching DNS servers until it finds the IP address.
 
-Last but not least, The browser connects to the server using TCP. It sends an HTTP request for the 'www.google.com' webpage. The server processes the request and sends back a response with the webpage. The browser then displays the webpage and cache it to avoid reloading when revisited.
+Last but not least, The browser connects to the server using TCP. It sends an HTTP request for the 'www.google.com' webpage. The server processes the request and sends back a response with the webpage. The browser then displays the webpage and cache it to avoid reloading when revisited.
 
 Take a look at the picture below. It shows the steps we discussed in a simple way.
 
